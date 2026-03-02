@@ -2,27 +2,27 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [red-crest] 🎯
+# red-crest 🎯
 
 ## Basic Details
 
-### Team Name: [CoreCoders]
+### Team Name: CoreCoders
 
 ### Team Members
-- Member 1: [jesiya] - [mar baselious christian college of engineering and technology]
-- Member 2: [anjali] - [mar baselious christian college of engineering and technology]
+- Member 1: jesiya - mar baselious christian college of engineering and technology
+- Member 2: anjali - mar baselious christian college of engineering and technology
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[https://red-crest-34ue.vercel.app/login](https://red-crest-34ue.vercel.app/login)
 
 ### Project Description
-[2-3 lines about what your project does]
+RedCrest is a predictive AI-powered women's safety travel application designed to transition safety from a reactive measure to a proactive one. It utilizes real-time behavioral anomaly scoring and dynamic safety mapping to protect users during solo travel.
 
 ### The Problem statement
-[What problem are you solving?]
+Women face significant risks during solo travel, especially at night or in unfamiliar areas. Traditional safety apps primarily focus on reactive alerts (SOS) after an incident occurs, failing to anticipate or prevent potential dangers before they escalate.
 
 ### The Solution
-[How are you solving it?]
+RedCrest solves this by implementing weighted anomaly scoring (monitoring speed, heading, and stop duration deviations) and dynamic safety heatmaps powered by crime, lighting, and crowd density data. This allows the app to predict danger and alert trusted contacts automatically if a user's behavior deviates from their intended path.
 
 ---
 
@@ -31,25 +31,25 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- **Languages used:** JavaScript (ES6+), HTML5, CSS3
+- **Frameworks used:** Vite (Build Tool)
+- **Libraries used:** Leaflet.js (Interactive Maps), Leaflet.heat (Dynamic Heatmaps), Firebase (Auth & Real-time Database), Lucide (Iconography)
+- **Tools used:** VS Code, Git, Antigravity AI, Vercel (Hosting)
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- **Main components:** Arduino Uno / ESP32, ADXL345 Accelerometer, SIM800L GSM/GPS Module
+- **Specifications:** Low-power consumption, MQTT protocol for data transmission, logic-level 3.3V/5V compatibility.
+- **Tools required:** Arduino IDE, Breadboard, Jumper Wires, 3.7V Li-ion Battery.
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [predictive danger mapping]
-- Feature 2: [wearable panic detection]
-- Feature 3: [safe route prediction]
-- Feature 4: [emergency sos button]
+- Feature 1: **Predictive Danger Mapping** - Real-time heatmaps based on historical crime data and environmental factors like lighting and crowd density.
+- Feature 2: **Behavioral Anomaly Scoring** - AI-driven detection of irregular movement patterns such as sudden stops, erratic speed, or path deviations.
+- Feature 3: **Safe Route Prediction** - Suggests the safest routes instead of just the fastest, prioritizing well-lit and populated areas.
+- Feature 4: **Emergency SOS Button** - One-tap immediate alert to trusted contacts and police dispatch with live location tracking and automated countdowns.
 
 ---
 
@@ -70,10 +70,16 @@ npm run dev
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+- **ESP32 Microcontroller**: Main processing unit with WiFi/Bluetooth capabilities.
+- **ADXL345 Accelerometer**: For impact and fall detection (detecting physical struggle).
+- **SIM800L GSM Module**: To send SMS alerts even without an active internet connection.
+- **Push Button**: For manual SOS activation.
 
 #### Circuit Setup
-[Explain how to set up the circuit]
+1. Connect the ADXL345 SDA/SCL pins to ESP32 I2C pins.
+2. Interface the SIM800L module via UART (TX/RX) with a common ground.
+3. Connect the manual SOS button to a digital input pin (Pull-down configuration).
+4. Power the system using a 3.7V Lipo battery with a voltage regulator.
 
 ---
 
@@ -83,51 +89,26 @@ npm run dev
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot1](./docs/screenshot1.png)
+*RedCrest Home Screen: Real-time map with safety heatmaps and predictive routing.*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2](./docs/screenshot2.png)
+*Route Monitoring: AI detects path deviation and displays the anomaly score.*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3](./docs/screenshot3.png)
+*SOS Alert: Active panic state with live location sharing to trusted contacts.*
 
 #### Diagrams
 
 **System Architecture:**
 
 <img src="./docs/architecture.jpeg" alt="system architecture">
-*Explain your system architecture - components, data flow, tech stack interaction*
+*The RedCrest architecture consists of a Mobile UI layer (built with JS/Leaflet) that transmits telemetry data to an AI Processing layer. This layer calculates threat scores and updates the Cloud Server (Firebase), which in turn triggers the Notification System (SMS/Push) to alert police and trusted contacts.*
 
 **Application Workflow:**
 
 ![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
-
----
-
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-#### Build Photos
-
-![Team](Add photo of your team here)
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+*The workflow begins with user authentication, followed by setting a travel destination. As the user moves, the AI monitors telemetry for deviations. If an anomaly is detected, the app enters a 'Warning' state, which escalates to a full 'SOS' state if the user doesn't respond.*
 
 ---
 
@@ -137,128 +118,41 @@ npm run dev
 
 #### API Documentation
 
-**Base URL:** `https://api.yourproject.com`
+**Base URL:** `https://red-crest-34ue.vercel.app/api`
 
 ##### Endpoints
 
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
-```
-
-**POST /api/endpoint**
-- **Description:** [What it does]
+**POST /api/auth/login**
+- **Description:** Authenticates the user and returns a session token.
 - **Request Body:**
 ```json
 {
-  "field1": "value1",
-  "field2": "value2"
+  "email": "user@example.com",
+  "password": "hashed_password"
 }
 ```
 - **Response:**
 ```json
 {
   "status": "success",
-  "message": "Operation completed"
+  "token": "jwt_token_here"
 }
 ```
 
-[Add more endpoints as needed...]
-
----
-
-### For Mobile Apps:
-
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
+**GET /api/safety/heatmap**
+- **Description:** Retrieves real-time safety risk levels for a given bounding box.
+- **Parameters:**
+  - `lat_min` (float): Southern boundary
+  - `lng_min` (float): Western boundary
+- **Response:**
+```json
+{
+  "status": "success",
+  "data": [
+    {"lat": 12.97, "lng": 77.59, "risk": 0.8}
+  ]
+}
 ```
-
----
-
-### For Hardware Projects:
-
-#### Bill of Materials (BOM)
-
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
-
-**Total Estimated Cost:** ₹[Amount]
-
-#### Assembly Instructions
-
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
 
 ---
 
@@ -268,105 +162,34 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 
 **Basic Usage:**
 ```bash
-python script.py [options] [arguments]
+node scripts/process-crime-data.js [options] [arguments]
 ```
 
 **Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
+- `process [file]` - Processes raw crime CSV data into JSON format for the heatmap.
+- `update-risk` - Re-calculates safety scores based on newly reported incidents.
 
 **Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
+- `-h, --help` - Show help message
+- `-v, --verbose` - Enable detailed logging
 - `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
-
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
 
 ---
 
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+
+
+https://github.com/user-attachments/assets/961acbae-55ea-4630-bad2-0ce3cd3660e4
+
+
+*The video demonstrates the core features of the app: real-time route monitoring, path deviation detection, and the automated SOS mechanism triggered by behavioral anomalies.*
 
 ### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
+- [Live Site](https://red-crest-34ue.vercel.app/login)
+- [Project Documentation](./docs/architecture.md)
 
 ---
 
@@ -374,46 +197,38 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** Antigravity AI (Gemini), Cursor, GitHub Copilot
 
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+**Purpose:**
+- **Anomaly Detection Logic**: Generated the weighted scoring algorithm for behavioral analysis.
+- **UI/UX Design**: Brainstormed the dark glassmorphism theme and icon placements.
+- **Debugging**: Fixed race conditions in Leaflet map layer rendering.
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+- "Calculate weighted anomaly score based on speed, heading, and stop duration deviations from a target route."
+- "Create a CSS-only dark glassmorphism card style for mobile safety alerts."
+- "Integrate Firebase Realtime Database with Vite for live GPS tracking."
 
-**Percentage of AI-generated code:** [Approximately X%]
+**Percentage of AI-generated code:** Approximately 40%
 
 **Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
-
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
+- Core architecture design and safety logic planning.
+- Custom crime data weighting and risk assessment models.
+- Frontend implementation and Leaflet map integration.
+- UI/UX refinements and user flow testing.
 
 ---
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- **jesiya**: Frontend development, AI Anomaly Logic, Map Integration, Firebase Setup.
+- **anjali**: UI/UX design, Documentation, Feature Testing, Graphics Design.
 
 ---
 
 ## License
 
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
-
-**Common License Options:**
-- MIT License (Permissive, widely used)
-- Apache 2.0 (Permissive with patent grant)
-- GPL v3 (Copyleft, requires derivative works to be open source)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
