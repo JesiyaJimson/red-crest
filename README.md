@@ -36,13 +36,6 @@ RedCrest solves this by implementing weighted anomaly scoring (monitoring speed,
 - **Libraries used:** Leaflet.js (Interactive Maps), Leaflet.heat (Dynamic Heatmaps), Firebase (Auth & Real-time Database), Lucide (Iconography)
 - **Tools used:** VS Code, Git, Antigravity AI, Vercel (Hosting)
 
-**For Hardware:**
-- **Main components:** Arduino Uno / ESP32, ADXL345 Accelerometer, SIM800L GSM/GPS Module
-- **Specifications:** Low-power consumption, MQTT protocol for data transmission, logic-level 3.3V/5V compatibility.
-- **Tools required:** Arduino IDE, Breadboard, Jumper Wires, 3.7V Li-ion Battery.
-
----
-
 ## Features
 
 List the key features of your project:
@@ -67,35 +60,26 @@ npm install
 npm run dev 
 ```
 
-### For Hardware:
 
-#### Components Required
-- **ESP32 Microcontroller**: Main processing unit with WiFi/Bluetooth capabilities.
-- **ADXL345 Accelerometer**: For impact and fall detection (detecting physical struggle).
-- **SIM800L GSM Module**: To send SMS alerts even without an active internet connection.
-- **Push Button**: For manual SOS activation.
 
-#### Circuit Setup
-1. Connect the ADXL345 SDA/SCL pins to ESP32 I2C pins.
-2. Interface the SIM800L module via UART (TX/RX) with a common ground.
-3. Connect the manual SOS button to a digital input pin (Pull-down configuration).
-4. Power the system using a 3.7V Lipo battery with a voltage regulator.
-
----
-
-## Project Documentation
-
-### For Software:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](./docs/screenshot1.png)
+
+<img width="1919" height="909" alt="Screenshot 2026-03-02 214428" src="https://github.com/user-attachments/assets/55901b23-f2b6-4890-8a7e-7db0898b6db2" />
+
+Login for user
+
+<img width="1918" height="904" alt="Screenshot 2026-03-02 214551" src="https://github.com/user-attachments/assets/38e50369-ec32-46c3-890e-3a6bae318fe1" />
+
 *RedCrest Home Screen: Real-time map with safety heatmaps and predictive routing.*
 
-![Screenshot2](./docs/screenshot2.png)
+<img width="1919" height="899" alt="Screenshot 2026-03-02 214633" src="https://github.com/user-attachments/assets/9f65948f-8f5c-44a7-bd6e-afc5053f653a" />
+
 *Route Monitoring: AI detects path deviation and displays the anomaly score.*
 
-![Screenshot3](./docs/screenshot3.png)
+<img width="713" height="515" alt="Screenshot 2026-03-02 214724" src="https://github.com/user-attachments/assets/47ac1623-a0f1-42da-9411-692a309cf336" />
+
 *SOS Alert: Active panic state with live location sharing to trusted contacts.*
 
 #### Diagrams
