@@ -96,7 +96,7 @@ npm run dev
 
 **System Architecture:**
 
-![](docs\architecture.jpeg)
+<img src="./docs/architecture.jpeg" alt="system architecture">
 *Explain your system architecture - components, data flow, tech stack interaction*
 
 **Application Workflow:**
