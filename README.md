@@ -177,31 +177,19 @@ https://github.com/user-attachments/assets/961acbae-55ea-4630-bad2-0ce3cd3660e4
 
 ---
 
-## AI Tools Used (Optional - For Transparency Bonus)
-
-If you used AI tools during development, document them here for transparency:
+## AI Tools Used 
 
 **Tool Used:** Antigravity AI (Gemini), Cursor, GitHub Copilot
 
 **Purpose:**
 - **Anomaly Detection Logic**: Generated the weighted scoring algorithm for behavioral analysis.
 - **UI/UX Design**: Brainstormed the dark glassmorphism theme and icon placements.
-- **Debugging**: Fixed race conditions in Leaflet map layer rendering.
 
 **Key Prompts Used:**
 - "Calculate weighted anomaly score based on speed, heading, and stop duration deviations from a target route."
 - "Create a CSS-only dark glassmorphism card style for mobile safety alerts."
 - "Integrate Firebase Realtime Database with Vite for live GPS tracking."
 
-**Percentage of AI-generated code:** Approximately 40%
-
-**Human Contributions:**
-- Core architecture design and safety logic planning.
-- Custom crime data weighting and risk assessment models.
-- Frontend implementation and Leaflet map integration.
-- UI/UX refinements and user flow testing.
-
----
 
 ## Team Contributions
 
@@ -210,10 +198,7 @@ If you used AI tools during development, document them here for transparency:
 
 ---
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
 Made with ❤️ at TinkerHub
