@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RedCrest — AI-Powered Women Safety</title>
+    <meta name="description" content="RedCrest: Predictive AI-powered women safety travel app.">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="stylesheet" href="./src/css/styles.css">
+
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- TOP BAR -->
+        <header class="top-bar">
+            <div class="app-brand">
+                <div class="app-logo">R</div>
+                <span class="app-name">RedCrest</span>
+            </div>
+            <div class="top-right">
+                <span class="time-display" id="current-time">--:--</span>
+                <span class="user-greeting" id="user-greeting"></span>
+                <div class="status-dot" title="Monitoring Active"></div>
+            </div>
+        </header>
+
+        <div id="map"></div>
+        <button class="sos-button" id="btn-sos" title="Emergency SOS">SOS</button>
+
+        <div class="panels-container">
+            <!-- HOME PANEL -->
+            <div class="panel active" id="panel-home">
+                <div class="panel-title"><span class="icon">🛡️</span> Safety Dashboard</div>
+                <div class="home-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: var(--accent-green)">Safe</div>
+                        <div class="stat-label">Status</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: var(--accent-blue)">0</div>
+                        <div class="stat-label">Alerts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: var(--accent-purple)">3</div>
+                        <div class="stat-label">Routes</div>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button class="quick-btn" id="btn-heatmap">🔥 Safety Heatmap</button>
+                    <!-- JavaScript listeners will handle these now -->
+                </div>
+            </div>
+
+            <!-- NAVIGATE PANEL -->
+            <div class="panel" id="panel-navigate">
+                <div class="panel-title"><span class="icon">🧭</span> Navigate</div>
+                <div class="route-selector">
+                    <select id="route-select">
+                        <option value="">— Select a route —</option>
+                        <option value="gachibowli_ameerpet">Gachibowli → Ameerpet</option>
+                        <option value="secunderabad_charminar">Secunderabad → Charminar</option>
+                        <option value="ameerpet_punjagutta">Ameerpet → Punjagutta</option>
+                    </select>
+                </div>
+                <div class="route-info" id="route-info"></div>
+                <div class="sim-controls" id="sim-controls">
+                    <button class="sim-btn primary" id="btn-simulate">▶ Start Journey</button>
+                    <button class="sim-btn warning" id="btn-deviate">⚡ Simulate Deviation</button>
+                    <button class="sim-btn secondary" id="btn-stop">⏹ Stop</button>
+                </div>
+                <div class="live-dashboard" id="live-dashboard"></div>
+            </div>
+
+            <!-- ALERTS PANEL -->
+            <div class="panel" id="panel-alerts">
+                <div class="panel-title"><span class="icon">🔔</span> Alert History</div>
+                <div class="alert-history-list" id="alert-history-list"></div>
+            </div>
+
+            <!-- PROFILE PANEL -->
+            <div class="panel" id="panel-profile">
+                <div class="user-card" id="user-card"></div>
+                <div class="field" style="font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                    <span class="icon">🆘</span> Emergency Contacts
+                </div>
+                <div class="contact-form">
+                    <input type="text" id="contact-name" placeholder="Name" class="full-width">
+                    <input type="tel" id="contact-phone" placeholder="Phone number">
+                    <select id="contact-rel">
+                        <option value="parent">Parent</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="friend">Friend</option>
+                        <option value="sibling">Sibling</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button class="btn-add-contact" id="btn-add-contact">+ Add Contact</button>
+                </div>
+                <div class="contacts-list" id="contacts-list"></div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-view="home"><span class="nav-icon">🏠</span>Home</button>
+            <button class="nav-btn" data-view="navigate"><span class="nav-icon">🧭</span>Navigate</button>
+            <button class="nav-btn" data-view="alerts"><span class="nav-icon">🔔</span>Alerts</button>
+            <button class="nav-btn" data-view="profile"><span class="nav-icon">👤</span>Profile</button>
+        </nav>
+
+        <div class="sos-overlay" id="sos-overlay">
+            <!-- Initial screen will be rendered by App.restoreSOSOverlay() if triggered -->
+            <div class="sos-confirm-screen">
+                <div class="sos-icon-large">🆘</div>
+                <h2>Trigger Emergency SOS?</h2>
+                <p>This will alert all your emergency contacts with your current location.</p>
+                <div class="sos-actions">
+                    <button id="sos-confirm" class="btn-sos-confirm">YES — SEND SOS</button>
+                    <button id="sos-cancel" class="btn-sos-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="toast-container" id="toast-container"></div>
+    </div>
+
+    <!-- Entry point -->
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
