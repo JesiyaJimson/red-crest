@@ -2,15 +2,15 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [red-crest] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [CoreCoders]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [jesiya] - [mar baselious christian college of engineering and technology]
+- Member 2: [anjali] - [mar baselious christian college of engineering and technology]
 
 ### Hosted Project Link
 [mention your project hosted link here]
@@ -46,10 +46,10 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [predictive danger mapping]
+- Feature 2: [wearable panic detection]
+- Feature 3: [safe route prediction]
+- Feature 4: [emergency sos button]
 
 ---
 
@@ -59,12 +59,12 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+npm install
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+npm run dev 
 ```
 
 ### For Hardware:
@@ -96,7 +96,7 @@ List the key features of your project:
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
+![](docs\architecture.jpeg)
 *Explain your system architecture - components, data flow, tech stack interaction*
 
 **Application Workflow:**
